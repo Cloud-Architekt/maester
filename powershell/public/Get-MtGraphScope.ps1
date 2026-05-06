@@ -51,6 +51,7 @@
 
     # Default read-only scopes required for Maester.
     $scopes = @( #IMPORTANT: Read note above before adding any new scopes.
+        'ConfigurationMonitoring.Read.All'
         'DeviceManagementConfiguration.Read.All'
         'DeviceManagementManagedDevices.Read.All'
         'DeviceManagementRBAC.Read.All'
@@ -83,7 +84,7 @@
     if ($Privileged) {
         Write-Verbose -Message "Adding Privileged scopes."
         $privilegedScopes | ForEach-Object { `
-            $scopes += $_
+                $scopes += $_
         }
     }
 
