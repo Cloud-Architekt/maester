@@ -135,7 +135,7 @@
         'Test-MtCisTeamsReportSecurityConcerns', 'Test-MtCisThirdPartyAndCustomApps',
         'Test-MtCisThirdPartyApplicationsDisallowed', 'Test-MtCisThirdPartyFileSharing',
         'Test-MtCisThirdPartyStorageServicesRestricted', 'Test-MtCisUserOwnedAppsRestricted',
-        'Test-MtCisWeakAuthenticationMethodsDisabled', 'Test-MtCisZAP', 'Test-MtConditionalAccessWhatIf', 'Test-MtConfigurationDrifts',
+        'Test-MtCisWeakAuthenticationMethodsDisabled', 'Test-MtCisZAP', 'Test-MtConditionalAccessWhatIf', 'Test-MtConfigurationDrift',
         'Test-MtConnection',
         'Test-MtDeviceComplianceSettings', 'Test-MtDeviceRegistrationLocalAdminsGlobalAdmin',
         'Test-MtDeviceRegistrationLocalAdminsRegisteringUser', 'Test-MtDeviceRegistrationMfaConflict', 'Test-MtEidscaControl',

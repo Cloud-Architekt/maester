@@ -1,4 +1,4 @@
-function Test-MtConfigurationDrifts {
+function Test-MtConfigurationDrift {
     <#
     .SYNOPSIS
     Checks for active configuration drift in Microsoft Entra UTCM monitors.
@@ -9,12 +9,12 @@ function Test-MtConfigurationDrifts {
     The check queries Microsoft Graph UTCM configuration drifts filtered to active status and reports the monitors that currently have drifted resources.
 
     .EXAMPLE
-    Test-MtConfigurationDrifts
+    Test-MtConfigurationDrift
 
     Returns $true if no active configuration drifts are found.
 
     .LINK
-    https://maester.dev/docs/commands/Test-MtConfigurationDrifts
+    https://maester.dev/docs/commands/Test-MtConfigurationDrift
     #>
     [CmdletBinding()]
     [OutputType([bool])]
@@ -24,6 +24,8 @@ function Test-MtConfigurationDrifts {
         Add-MtTestResultDetail -SkippedBecause NotConnectedGraph
         return $null
     }
+
+    Write-Verbose "Test-MtConfigurationDrift: Checking UTCM monitors for active configuration drifts."
 
     try {
         $ActiveDriftsResponse = Invoke-MtGraphRequest -ApiVersion beta -RelativeUri "admin/configurationManagement/configurationDrifts" -Filter "status eq 'active'" -Select id, monitorId, resourceType, baselineResourceDisplayName, resourceInstanceIdentifier, status
